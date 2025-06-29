@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <!-- Navigation Bar -->
+    <nav class="main-header">
+        <div class="container header-content">
+            <a href="#dashboard" class="logo">
+                <svg class="logo-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h12a3 3 0 013 3v12a3 3 0 01-3 3H6a3 3 0 01-3-3V6zm4.5 1.5a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h3c.414 0 .75-.336.75-.75v-3a.75.75 0 00-.75-.75h-3zM16.5 7.5a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h3c.414 0 .75-.336.75-.75v-3a.75.75 0 00-.75-.75h-3zM7.5 13.5a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h3c.414 0 .75-.336.75-.75v-3a.75.75 0 00-.75-.75h-3zM16.5 13.5a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h3c.414 0 .75-.336.75-.75v-3a.75.75 0 00-.75-.75h-3z" clip-rule="evenodd" />
+                </svg>
+                Learnify
+            </a>
+            <div class="desktop-nav-links">
+                <a href="#dashboard" class="nav-link">Courses</a>
+                <a href="#progress" class="nav-link">My Progress</a>
+                <a href="#profile" class="nav-link">Profile</a>
+                <button id="dark-mode-toggle" class="mode-toggle-button">
+                    <svg class="mode-toggle-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.12-1.36a5.5 5.5 0 01-5.77-5.77A9.001 9.001 0 0012 3z"></path>
+                    </svg>
+                </button>
+            </div>
+            <button id="mobile-menu-button" class="mobile-menu-toggle">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default, toggled by JS) -->
+        <div id="mobile-menu" class="mobile-nav-links hidden">
+            <a href="#dashboard" class="mobile-nav-link">Courses</a>
+            <a href="#progress" class="mobile-nav-link">My Progress</a>
+            <a href="#profile" class="mobile-nav-link">Profile</a>
+            <button id="mobile-dark-mode-toggle" class="mode-toggle-button mobile-mode-toggle-button">
+                <svg class="mode-toggle-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3a9 9 0 109 9c0-.46-.04-.92-.12-1.36a5.5 5.5 0 01-5.77-5.77A9.001 9.001 0 0012 3z"></path>
+                </svg>
+                Toggle Dark Mode
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="app-content" class="main-content">
+        <!-- Content will be dynamically loaded here by JavaScript -->
+        <div class="loading-message">Loading platform...</div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2024 Learnify. All rights reserved.</p>
+        <p class="footer-tagline">Designed with ❤️ for a better learning experience.</p>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

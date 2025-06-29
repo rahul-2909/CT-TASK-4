@@ -1,0 +1,952 @@
+/* --- Global Styles --- */
+:root {
+    --primary-blue: #4F46E5; /* Indigo-600 */
+    --primary-blue-darker: #2563EB; /* Blue-700 */
+    --accent-green: #10B981; /* Emerald-500 */
+    --text-light: #F3F4F6; /* Gray-100 */
+    --text-medium-light: #E5E7EB; /* Gray-200 */
+    --text-medium-dark: #6B7280; /* Gray-500 */
+    --text-dark: #111827; /* Gray-900 */
+    --bg-light: #F3F4F6; /* Gray-100 */
+    --bg-medium-light: #FFFFFF; /* White */
+    --bg-medium-dark: #D1D5DB; /* Gray-300 */
+    --bg-gray-input: #F9FAFB; /* Gray-50 */
+    --bg-gray-hover: #F0F0F0; /* Lighter gray for hover */
+    --bg-gray-active: #E0E0E0; /* Even lighter gray for active */
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Equivalent to shadow-lg */
+    --shadow-inner-light: rgba(0, 0, 0, 0.06); /* Equivalent to shadow-inner */
+
+    /* Dark Mode Variables */
+    --dark-primary-blue: #60A5FA; /* Blue-400 */
+    --dark-primary-blue-darker: #3B82F6; /* Blue-500 */
+    --dark-accent-green: #34D399; /* Emerald-400 */
+    --dark-text-light: #E5E7EB; /* Gray-200 */
+    --dark-text-medium-light: #9CA3AF; /* Gray-400 */
+    --dark-text-dark: #F9FAFB; /* White equivalent */
+    --dark-bg-light: #4B5563; /* Gray-600 */
+    --dark-bg-medium-light: #374151; /* Gray-700 */
+    --dark-bg-medium-dark: #1F2937; /* Gray-800 */
+    --dark-bg-primary: #111827; /* Gray-900 */
+    --dark-bg-gray-input: #4B5563; /* Gray-600 */
+    --dark-bg-gray-hover: #374151; /* Gray-700 for hover */
+    --dark-bg-gray-active: #1F2937; /* Gray-800 for active */
+    --dark-shadow-dark: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-dark);
+}
+
+.dark-mode .main-header {
+    background-color: var(--dark-bg-medium-light);
+    box-shadow: 0 4px 6px -1px var(--dark-shadow-dark);
+}
+
+.dark-mode .main-header .logo {
+    color: var(--dark-primary-blue);
+}
+
+.dark-mode .nav-link,
+.dark-mode .mobile-menu-toggle {
+    color: var(--dark-text-medium-light);
+}
+.dark-mode .nav-link:hover,
+.dark-mode .mobile-menu-toggle:hover {
+    color: var(--dark-primary-blue);
+}
+
+.dark-mode .mobile-nav-link {
+    color: var(--dark-text-medium-light);
+}
+.dark-mode .mobile-nav-link:hover {
+    background-color: var(--dark-bg-medium-dark);
+}
+
+.dark-mode .mode-toggle-button {
+    color: var(--dark-text-medium-light);
+}
+
+.dark-mode .course-card {
+    background-color: var(--dark-bg-medium-light);
+    box-shadow: 0 10px 15px -3px var(--dark-shadow-dark);
+}
+.dark-mode .course-card:hover {
+    box-shadow: 0 20px 25px -5px var(--dark-shadow-dark);
+}
+
+.dark-mode .course-card h3 {
+    color: var(--dark-text-dark);
+}
+
+.dark-mode .course-card p,
+.dark-mode .course-card span {
+    color: var(--dark-text-medium-light);
+}
+
+.dark-mode .progress-bar-track {
+    background-color: var(--dark-bg-light);
+}
+
+.dark-mode .main-footer {
+    background-color: var(--dark-bg-medium-light);
+    box-shadow: inset 0 2px 4px 0 var(--dark-shadow-dark);
+    color: var(--dark-text-medium-light);
+}
+
+.dark-mode .course-detail-container,
+.dark-mode .profile-container {
+    background-color: var(--dark-bg-medium-light);
+    box-shadow: 0 10px 15px -3px var(--dark-shadow-dark);
+}
+.dark-mode .course-detail-container h2,
+.dark-mode .course-detail-container h3,
+.dark-mode .profile-container h2,
+.dark-mode .profile-container h3 {
+    color: var(--dark-text-dark);
+}
+.dark-mode .course-detail-container p,
+.dark-mode .profile-container p {
+    color: var(--dark-text-medium-light);
+}
+.dark-mode .course-detail-container .lesson-item {
+    background-color: var(--dark-bg-medium-dark);
+    box-shadow: 0 1px 2px 0 var(--dark-shadow-dark);
+}
+.dark-mode .course-detail-container .lesson-item .lesson-title {
+    color: var(--dark-text-dark);
+}
+.dark-mode .course-detail-container .lesson-item .lesson-title.completed {
+    color: var(--dark-text-medium-light); /* Gray-400 equivalent */
+}
+.dark-mode .course-detail-container .lesson-item .play-lesson-btn {
+    color: var(--dark-primary-blue);
+}
+.dark-mode .course-detail-container .lesson-item .play-lesson-btn:hover {
+    color: var(--dark-primary-blue-darker);
+}
+
+/* Search and Filter */
+.dark-mode .search-filter-section .search-input {
+    background-color: var(--dark-bg-gray-input);
+    border-color: var(--dark-bg-light);
+    color: var(--dark-text-dark);
+}
+.dark-mode .search-filter-section .filter-button {
+    background-color: var(--dark-bg-light);
+    color: var(--dark-text-dark);
+}
+.dark-mode .search-filter-section .filter-button:hover {
+    background-color: var(--dark-bg-medium-dark);
+}
+.dark-mode .search-filter-section .filter-button.active {
+    background-color: var(--dark-primary-blue);
+    color: var(--dark-text-dark); /* White for contrast */
+}
+
+
+/* --- Layout --- */
+.container {
+    max-width: 1280px; /* Equivalent to max-w-7xl from Tailwind, a common desktop width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+}
+
+.main-content {
+    flex-grow: 1; /* flex-grow */
+    padding-top: 2rem; /* py-8 */
+    padding-bottom: 2rem; /* py-8 */
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: var(--bg-medium-light);
+    box-shadow: 0 4px 6px -1px var(--shadow-light); /* shadow-lg */
+    padding: 1rem; /* p-4 */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space-x-2 */
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 2rem; /* w-8 */
+    height: 2rem; /* h-8 */
+}
+
+.desktop-nav-links {
+    display: none; /* hidden */
+    gap: 1.5rem; /* space-x-6 */
+    align-items: center; /* Align mode toggle with links */
+}
+
+.nav-link {
+    color: var(--text-medium-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue);
+}
+
+.mode-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--text-medium-dark);
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.mode-toggle-button:hover {
+    color: var(--primary-blue);
+}
+
+.mode-toggle-icon {
+    width: 2rem; /* w-8 */
+    height: 2rem; /* h-8 */
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: var(--text-medium-dark);
+}
+
+.mobile-nav-links {
+    margin-top: 1rem; /* mt-4 */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* space-y-2 */
+    padding-left: 0.5rem; /* px-2 */
+    padding-right: 0.5rem; /* px-2 */
+    padding-bottom: 0.75rem; /* pb-3 */
+}
+
+.mobile-nav-link {
+    display: block;
+    color: var(--text-medium-dark);
+    text-decoration: none;
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    transition: background-color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+    background-color: var(--bg-medium-dark);
+}
+
+.mobile-mode-toggle-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 1rem;
+    font-weight: 500;
+    background: none; /* Ensure no button background */
+    border: none; /* Ensure no button border */
+    cursor: pointer;
+    color: var(--text-medium-dark);
+    transition: background-color 0.2s ease;
+}
+
+.mobile-mode-toggle-button:hover {
+    background-color: var(--bg-medium-dark);
+}
+
+.mobile-mode-toggle-button .mode-toggle-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--bg-medium-light);
+    box-shadow: inset 0 2px 4px 0 var(--shadow-light); /* shadow-inner */
+    padding: 1.5rem; /* p-6 */
+    margin-top: 2rem; /* mt-8 */
+    text-align: center;
+    color: var(--text-medium-dark);
+}
+
+.footer-tagline {
+    font-size: 0.875rem; /* text-sm */
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+/* --- Dashboard Styles --- */
+.dashboard-heading {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    text-align: center;
+    margin-bottom: 2.5rem; /* mb-10 */
+    color: var(--primary-blue);
+}
+
+/* Search and Filter Section */
+.search-filter-section {
+    margin-bottom: 2.5rem; /* mb-10 */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-input-wrapper {
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem; /* py-3 px-4, space for icon */
+    border: 1px solid var(--bg-medium-dark);
+    border-radius: 9999px; /* rounded-full */
+    background-color: var(--bg-gray-input);
+    color: var(--text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* focus:ring-blue-500 equivalent */
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem; /* ml-3 */
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-medium-dark);
+    width: 1.25rem; /* w-5 */
+    height: 1.25rem; /* h-5 */
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap; /* allow wrapping on small screens */
+    gap: 0.5rem; /* space-x-2 and space-y-2 implicitly */
+    justify-content: center;
+}
+
+.filter-button {
+    background-color: var(--bg-medium-light);
+    border: 1px solid var(--bg-medium-dark);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 9999px; /* rounded-full */
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    font-size: 0.875rem; /* text-sm */
+    white-space: nowrap; /* prevent text wrapping */
+}
+
+.filter-button:hover {
+    background-color: var(--bg-gray-hover);
+}
+
+.filter-button.active {
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    border-color: var(--primary-blue);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    gap: 2rem; /* gap-8 */
+}
+
+.course-card {
+    background-color: var(--bg-medium-light);
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px var(--shadow-light); /* shadow-lg */
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    box-shadow: 0 20px 25px -5px var(--shadow-light); /* hover:shadow-xl */
+    transform: translateY(-8px); /* hover:-translate-y-2 (2*4px) */
+}
+
+.course-card-image {
+    width: 100%;
+    height: 12rem; /* h-48 */
+    object-fit: cover;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+
+.course-card-content {
+    padding: 1.5rem; /* p-6 */
+}
+
+.course-card-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+    color: var(--text-dark);
+}
+
+.course-card-description {
+    color: var(--text-medium-dark);
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 1rem; /* mb-4 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* line-clamp-3 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.progress-bar-track {
+    width: 100%;
+    background-color: var(--bg-medium-dark);
+    border-radius: 9999px; /* rounded-full */
+    height: 0.625rem; /* h-2.5 */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.progress-bar-fill {
+    background-color: var(--accent-green);
+    height: 100%;
+    border-radius: 9999px; /* rounded-full */
+    animation: progressFill 1s ease-out forwards;
+}
+
+.progress-percentage {
+    font-size: 0.75rem; /* text-xs */
+    color: var(--text-medium-dark);
+}
+
+.course-card-button {
+    margin-top: 1rem; /* mt-4 */
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 600; /* font-semibold */
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.course-card-button:hover {
+    background-color: var(--primary-blue-darker);
+}
+
+/* --- Course Detail Styles --- */
+.course-detail-container {
+    max-width: 64rem; /* max-w-4xl (1024px) */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg-medium-light);
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px var(--shadow-light); /* shadow-xl */
+    padding: 1.5rem; /* p-6 */
+}
+
+.back-button {
+    color: var(--primary-blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem; /* mb-6 */
+    transition: text-decoration 0.2s ease;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.back-button svg {
+    width: 1.25rem; /* w-5 */
+    height: 1.25rem; /* h-5 */
+    margin-right: 0.25rem; /* mr-1 */
+}
+
+.course-detail-heading {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 800; /* font-extrabold */
+    color: var(--text-dark);
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.course-detail-description {
+    color: var(--text-medium-dark);
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.progress-section {
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.progress-section-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    color: var(--text-dark);
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.progress-bar-track-lg {
+    width: 100%;
+    background-color: var(--bg-medium-dark);
+    border-radius: 9999px; /* rounded-full */
+    height: 0.75rem; /* h-3 */
+}
+
+.video-section {
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.video-section-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    color: var(--text-dark);
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+
+/* Specific styles for video container responsiveness (from previous CSS, kept as is) */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width = 9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px var(--shadow-light); /* shadow-lg */
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lesson-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+
+.lesson-list-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    color: var(--text-dark);
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.lesson-item {
+    background-color: var(--bg-gray-input); /* Light gray for items */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 1px 2px 0 var(--shadow-light); /* shadow-sm */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lesson-item-content {
+    display: flex;
+    align-items: center;
+}
+
+.lesson-checkbox {
+    width: 1.25rem; /* h-5 w-5 */
+    height: 1.25rem;
+    accent-color: var(--primary-blue); /* Sets checkbox color */
+    border-radius: 0.25rem; /* rounded-md */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.lesson-checkbox:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* focus:ring-primary-blue */
+}
+
+
+.lesson-title {
+    margin-left: 0.75rem; /* ml-3 */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 500; /* font-medium */
+    color: var(--text-dark);
+    transition: color 0.2s ease;
+}
+
+.lesson-title.completed {
+    text-decoration: line-through;
+    color: var(--text-medium-dark);
+}
+
+.play-lesson-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.75rem; /* px-3 py-1 */
+    border-radius: 0.375rem; /* rounded-md */
+    color: var(--primary-blue);
+    font-weight: 600; /* font-semibold */
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.play-lesson-btn:hover {
+    color: var(--primary-blue-darker);
+    background-color: rgba(79, 70, 229, 0.1); /* light tint on hover */
+}
+
+.play-lesson-btn svg {
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    margin-right: 0.25rem; /* mr-1 */
+}
+
+/* New: Course Sections (About, Instructor) */
+.course-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--bg-medium-dark);
+}
+
+.course-section:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.dark-mode .course-section {
+    border-top-color: var(--dark-bg-light);
+}
+
+/* --- My Progress Styles --- */
+.my-progress-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    gap: 2rem; /* gap-8 */
+}
+
+.progress-card {
+    background-color: var(--bg-medium-light);
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px var(--shadow-light); /* shadow-lg */
+    padding: 1.5rem; /* p-6 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.progress-card-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.75rem; /* mb-3 */
+    color: var(--text-dark);
+}
+
+.progress-card-description {
+    color: var(--text-medium-dark);
+    margin-bottom: 1rem; /* mb-4 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.progress-card-percentage {
+    font-size: 1rem; /* text-md */
+    font-weight: 600; /* font-semibold */
+    color: var(--text-medium-dark);
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+.progress-card-button {
+    margin-top: 1.5rem; /* mt-6 */
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: 600; /* font-semibold */
+    padding: 0.5rem 1.25rem; /* py-2 px-5 */
+    border-radius: 0.5rem; /* rounded-lg */
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.progress-card-button:hover {
+    background-color: var(--primary-blue-darker);
+}
+
+/* --- User Profile Styles --- */
+.profile-container {
+    max-width: 48rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--bg-medium-light);
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px var(--shadow-light); /* shadow-xl */
+    padding: 2rem; /* p-8 */
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 8rem; /* w-32 */
+    height: 8rem; /* h-32 */
+    border-radius: 9999px; /* rounded-full */
+    object-fit: cover;
+    margin: 0 auto 1.5rem; /* mx-auto mb-6 */
+    border: 4px solid var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.5);
+}
+
+.profile-name {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    color: var(--text-dark);
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.profile-email {
+    font-size: 1.125rem; /* text-lg */
+    color: var(--text-medium-dark);
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* grid-cols-2 */
+    gap: 1.5rem; /* gap-6 */
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.stat-card {
+    background-color: var(--bg-gray-input);
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1.5rem; /* p-6 */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+.dark-mode .stat-card {
+    background-color: var(--dark-bg-medium-dark);
+}
+
+.stat-value {
+    font-size: 2rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.stat-label {
+    font-size: 0.875rem; /* text-sm */
+    color: var(--text-medium-dark);
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+
+.profile-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 0.75rem 1.5rem; /* py-3 px-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    text-decoration: none;
+    font-weight: 600; /* font-semibold */
+    transition: background-color 0.2s ease;
+}
+
+.profile-button:hover {
+    background-color: var(--primary-blue-darker);
+}
+
+.profile-button.secondary {
+    background-color: transparent;
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.profile-button.secondary:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* --- Utility / Helper Classes --- */
+.hidden {
+    display: none !important;
+}
+
+.loading-message {
+    text-align: center;
+    color: var(--text-medium-dark);
+    margin-top: 2.5rem; /* mt-10 */
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-content {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+    to {
+        /* Width set by JS */
+    }
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* Small screens (sm: >= 640px) - Adjusted as needed */
+@media (min-width: 640px) {
+    .container {
+        padding-left: 1.5rem; /* sm:px-6 */
+        padding-right: 1.5rem; /* sm:px-6 */
+    }
+    .course-detail-container,
+    .profile-container {
+        padding: 2rem; /* md:p-8 */
+    }
+    .main-header {
+        padding: 1.5rem 1rem;
+    }
+    .profile-stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+    }
+}
+
+/* Medium screens (md: >= 768px) */
+@media (min-width: 768px) {
+    .desktop-nav-links {
+        display: flex; /* md:flex */
+    }
+    .mobile-menu-toggle,
+    .mobile-nav-links {
+        display: none; /* md:hidden */
+    }
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    }
+    .my-progress-grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    }
+    .course-detail-container {
+        padding: 2rem; /* md:p-8 */
+    }
+    .search-filter-section {
+        flex-direction: row; /* md:flex-row */
+        justify-content: space-between;
+        gap: 1.5rem; /* md:space-x-6 */
+        align-items: center;
+    }
+    .search-input-wrapper {
+        flex-grow: 1; /* md:flex-1 */
+    }
+    .filter-buttons {
+        justify-content: flex-end; /* md:justify-end */
+        flex-wrap: nowrap; /* Prevent wrapping if enough space */
+    }
+    .profile-stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+    }
+}
+
+/* Large screens (lg: >= 1024px) */
+@media (min-width: 1024px) {
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+    }
+}
+
+/* Custom Scrollbar Styles (from previous CSS, kept as is) */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+    height: 8px; /* Height of the scrollbar for horizontal */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Track background color */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+.dark-mode .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--dark-bg-light); /* Dark mode track color */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #A0AEC0; /* Thumb color (gray-400) */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.dark-mode .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--dark-bg-medium-light); /* Dark mode thumb color */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #808B9F; /* Darker thumb on hover */
+}
+
+.dark-mode .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-primary-blue-darker); /* Slightly darker thumb on hover for dark mode */
+}
